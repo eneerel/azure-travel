@@ -1,16 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { CssBaseline } from "@mui/material";
-import Authpage from "./pages/Auth";
+
+import "./App.css";
+import { Grid } from "@mui/material";
 import Home from "./pages/Home";
+import Detail from "./pages/Details";
+import { Route, Routes } from "react-router-dom";
+
 function App() {
   return (
-    <Router>
-      <CssBaseline />
+    <Grid className="App">
       <Routes>
-        <Route path="/Auth" element={<Authpage />} />
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route exact path="/Detail" element={<Detail />} />
       </Routes>
-    </Router>
+    </Grid>
   );
 }
+
 export default App;

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { SignIn } from "./SignIn";
-import { SignUp } from "./SignUp";
+import React from "react";
+import { useState } from "react";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
-const Authpage = () => {
+const Auth = () => {
   const [isSignIn, setIsSignIn] = useState(true);
+
   return (
     <>
       {isSignIn ? (
@@ -15,4 +17,4 @@ const Authpage = () => {
   );
 };
 
-export default Authpage;
+export default Auth;
