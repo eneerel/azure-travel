@@ -1,50 +1,40 @@
+import { Box, Button, Grid, InputBase } from "@mui/material";
 import React from "react";
-import Navbar from "../../components/Header/NavBar";
-import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
-import Search from "../../components/Header/Search";
-import Categories from "../../components/Hero/Categories";
-import ImgCard from "../../components/Hero/ImgCard";
-import Footer from "../../components/Footer";
+import Header from "../../component/Header";
+import HomeFooter from "../../component/homeFooter";
+import Browse from "../../component/browse";
+import Connect from "../../component/connect";
+import Offers from "../../component/offers";
+import Plan from "../../component/plan";
+import TopVacation from "../../component/topVac";
+import { useState } from "react";
+import Category from "../../component/Category";
+import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
 
-const Home = ({ changeMode }) => {
+const Home = () => {
+  const [index, setIndex] = useState(0);
+  const clicked = (i) => {
+    setIndex(i);
+  };
+  const [isLogged, setIsLogged] = useState();
+  // useEffect(())
   return (
-    <Grid
-      sx={{
-        background: "url(/pic/1.png) no-repeat ",
-        backgroundSize: "cover",
-        width: "100%",
-        height: "100vh",
-        fill: "linearGradi1`ent rgba(255, 255, 255, 0)",
-        zIndex: "-1",
-      }}
-    >
-      <Box>
-        <Grid sx={{ marginLeft: "10%", marginRight: "10%" }}>
-          <Navbar changeMode={changeMode} />
-          <Grid sx={{ marginBottom: "5%" }}>
-            <Search/>
-            <Categories/>
-          </Grid>
-        </Grid>
-        <Grid sx={{ marginLeft: "10%", marginBottom: "5%" }}>
-          <ImgCard />
-        </Grid>
-
-        <Grid sx={{ marginLeft: "10%" }}>
-        
-          <Mainsec />
-          <Grid sx={{ marginRight: "10%" }}>
-            <Maintwo />
-          </Grid>
-          <Mainthree />
-        </Grid>
-        <Boxshadow />
-        <Mainfour />
-
-        <Footer />
-      </Box>
-    </Grid>
+    <Box>
+      <Header clicked={clicked} index={index} />
+      {index === 0 ? (
+        <>
+          <TopVacation />
+          <Offers />
+          <Browse />
+          <Plan />
+          <Connect />
+        </>
+      ) : (
+        <Category />
+      )}
+      <HomeFooter />
+    </Box>
   );
 };
 

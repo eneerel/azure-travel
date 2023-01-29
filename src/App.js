@@ -1,18 +1,30 @@
-
-import "./App.css";
-import { Grid } from "@mui/material";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Detail from "./pages/Details";
-import { Route, Routes } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import Navbar from "./component/Navbar";
+import Stays from "./pages/Stays";
+import Flights from "./pages/Flights";
+import Packages from "./pages/Pack";
+import Footer from "./component/Footer";
 
 function App() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
-    <Grid className="App">
+    <Router>
+      <CssBaseline />
+      <Navbar open={open} handleOpen={handleOpen} handleClose={handleClose} />
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route exact path="/Detail" element={<Detail />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Stays" element={<Stays />} />
+        <Route path="/Flights" element={<Flights />} />
+        <Route path="/Packages" element={<Packages />} />
       </Routes>
-    </Grid>
+      <Footer />
+    </Router>
   );
 }
 
