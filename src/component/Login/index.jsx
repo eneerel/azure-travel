@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Signup from "./signUp";
 import Signin from "./signIn";
-import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
 
-const Login = ({ handleClose, isLogged }) => {
+const Login = ({ handleClose, setUser }) => {
   const [isSignIn, setSignIn] = useState(true);
   return (
     <>
@@ -12,7 +10,7 @@ const Login = ({ handleClose, isLogged }) => {
         <Signin
           setSignIn={setSignIn}
           handleClose={handleClose}
-          isLogged={isLogged}
+          setUser={setUser}
         />
       ) : (
         <Signup setSignIn={setSignIn} />

@@ -1,16 +1,16 @@
 import React from "react";
 import HeaderDet from "../../component/HeaderDet";
-import Cardsixdata from "../../component/CardsDet/data";
-import Cardsix from"../../component/CardsDet/data";
+import CardsDet from "../../component/CardsDet";
+import Recently from "../../component/CardsDet/recently";
+import { Grid } from "@mui/material";
 const Stays = () => {
   return (
-    <>
-    <HeaderDet/>
-    <Cardsix/>
-    <Cardsixdata/>
-
-    </>
-  )
+    <Grid>
+      <HeaderDet />
+      <CardsDet />
+      <Recently />
+    </Grid>
+  );
 };
 
 export default Stays;
