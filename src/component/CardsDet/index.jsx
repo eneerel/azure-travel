@@ -1,93 +1,9 @@
 import React from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
-import StarIcon from "@mui/icons-material/Star";
-const CardsDet = () => {
-  const cardsItem = [
-    {
-      img: "./images/image33.png",
-      title: "Swiss Apls",
-      rating: "4.7",
-      star: <StarIcon />,
-      day: "3Days 4Nights",
-      text1: "Tour combo with return airport transter",
-      text2: "City Tour",
-      text3: "Curios Center",
-      type1: "₹88,952",
-      type2: "₹88,952",
-      type3: "Per person",
-      iconname: "2 Flights",
-      iconURL: "/images/icon1.png",
-      iconnametwo: "1 Hotel",
-      icontwoURL: "/images/icon2.png",
-      iconnamethree: "2 Transfers",
-      iconthreeURL: "/images/icon3.png",
-      iconnamefour: "4 Activities",
-      icontourURL: "/images/icon4.png",
-    },
-    {
-      img: "./images/image34.png",
-      title: "Swiss Apls",
-      rating: "4.7",
-      star: <StarIcon />,
-      day: "3Days 4Nights",
-      text1: "Tour combo with return airport transter",
-      text2: "City Tour",
-      text3: "Curios Center",
-      type1: "₹88,952",
-      type2: "₹88,952",
-      type3: "Per person",
-      iconname: "2 Flights",
-      iconURL: "/images/icon1.png",
-      iconnametwo: "1 Hotel",
-      icontwoURL: "/images/icon2.png",
-      iconnamethree: "2 Transfers",
-      iconthreeURL: "/images/icon3.png",
-      iconnamefour: "4 Activities",
-      icontourURL: "/images/icon4.png",
-    },
-    {
-      img: "./images/image35.png",
-      title: "Swiss Apls",
-      rating: "4.7",
-      star: <StarIcon />,
-      day: "3Days 4Nights",
-      text1: "Tour combo with return airport transter",
-      text2: "City Tour",
-      text3: "Curios Center",
-      type1: "₹88,952",
-      type2: "₹88,952",
-      type3: "Per person",
-      iconname: "2 Flights",
-      iconURL: "/images/icon1.png",
-      iconnametwo: "1 Hotel",
-      icontwoURL: "/images/icon2.png",
-      iconnamethree: "2 Transfers",
-      iconthreeURL: "/images/icon3.png",
-      iconnamefour: "4 Activities",
-      icontourURL: "/images/icon4.png",
-    },
-    {
-      img: "./images/image36.png",
-      title: "Swiss Apls",
-      rating: "4.7",
-      star: <StarIcon />,
-      day: "3Days 4Nights",
-      text1: "Tour combo with return airport transter",
-      text2: "City Tour",
-      text3: "Curios Center",
-      type1: "₹88,952",
-      type2: "₹88,952",
-      type3: "Per person",
-      iconname: "2 Flights",
-      iconURL: "/images/icon1.png",
-      iconnametwo: "1 Hotel",
-      icontwoURL: "/images/icon2.png",
-      iconnamethree: "2 Transfers",
-      iconthreeURL: "/images/icon3.png",
-      iconnamefour: "4 Activities",
-      icontourURL: "/images/icon4.png",
-    },
-  ];
+
+
+const CardsDet = ({cardItem}) => {
+  console.log("card data:",cardItem);
   return (
     <Grid
       sx={{
@@ -99,7 +15,7 @@ const CardsDet = () => {
       }}
     >
       <Box sx={{ marginBottom: "4%" }}>
-        <img src={`${cardsItem.img}`} alt="" width={360} height={310} />
+        <img src={`${cardItem.img}`} alt="" width={360} height={310} />
       </Box>
       <Box>
         {" "}
@@ -110,17 +26,17 @@ const CardsDet = () => {
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box> {cardsItem.title}</Box>
+            <Box> {cardItem.title}</Box>
 
             <Box>
-              {cardsItem.star}
-              {cardsItem.rating}
+              {cardItem.star}
+              {cardItem.rating}
             </Box>
           </Box>
 
           <Box sx={{ opacity: 0.5, fontSize: "18px", marginBottom: "5%" }}>
             {" "}
-            {cardsItem.day}
+            {cardItem.day}
           </Box>
         </Box>
         <Box
@@ -133,30 +49,30 @@ const CardsDet = () => {
           }}
         >
           <Box>
-            <img src={`${cardsItem.iconURL}`} alt="" width={30} height={30} />
-            <Box sx={{ color: "black" }}>{card.iconname}</Box>
+            <img src={`${cardItem.iconURL}`} alt="" width={30} height={30} />
+            <Box sx={{ color: "black" }}>{cardItem.iconname}</Box>
           </Box>
           <Box>
             <img
-              src={`${cardsItem.icontwoURL}`}
+              src={`${cardItem.icontwoURL}`}
               alt=""
               width={30}
               height={30}
             />
-            <Box sx={{ color: "black" }}>{card.iconnametwo}</Box>
+            <Box sx={{ color: "black" }}>{cardItem.iconnametwo}</Box>
           </Box>
           <Box>
             <img
-              src={`${cardsItem.iconthreeURL}`}
+              src={`${cardItem.iconthreeURL}`}
               alt=""
               width={30}
               height={30}
             />
-            <Box sx={{ color: "black" }}>{card.iconnamethree}</Box>
+            <Box sx={{ color: "black" }}>{cardItem.iconnamethree}</Box>
           </Box>
           <Box>
-            <img src={`${cardsItem.iconURL}`} alt="" width={30} height={30} />
-            <Box sx={{ color: "black" }}>{card.iconnamefour}</Box>
+            <img src={`${cardItem.iconURL}`} alt="" width={30} height={30} />
+            <Box sx={{ color: "black" }}>{cardItem.iconnamefour}</Box>
           </Box>
         </Box>
         <Box
@@ -166,9 +82,9 @@ const CardsDet = () => {
             marginBottom: "5%",
           }}
         >
-          <li>{cardsItem.text1}</li>
-          <li>{cardsItem.text2}</li>
-          <li>{cardsItem.text3}</li>
+          <li>{cardItem.text1}</li>
+          <li>{cardItem.text2}</li>
+          <li>{cardItem.text3}</li>
         </Box>
         <Box
           sx={{
@@ -177,17 +93,17 @@ const CardsDet = () => {
             gap: "20% ",
           }}
         >
-          <Box>{cardsItem.type1}</Box>
+          <Box>{cardItem.type1}</Box>
           <Box
             sx={{
               display: "flex",
             }}
           >
             <Box sx={{ fontSize: "24px", fontWeight: "700" }}>
-              {cardsItem.type2}
+              {cardItem.type2}
             </Box>
             <Box sx={{ opacity: "0.5", marginTop: "7%" }}>
-              {cardsItem.type3}
+              {cardItem.type3}
             </Box>
           </Box>
         </Box>

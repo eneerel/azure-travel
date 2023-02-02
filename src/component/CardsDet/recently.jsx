@@ -1,6 +1,9 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
-const Recently = ({ cardsItem, CardsDet }) => {
+import { Box, Button, Grid, Typography ,Card} from "@mui/material";
+import { cardsItem } from "./data";
+import CardsDet from ".";
+const Recently = () => {
+  console.log(cardsItem);
   return (
     <Grid sx={{ marginBottom: "10%", marginTop: "40%" }}>
       <Typography
@@ -16,9 +19,10 @@ const Recently = ({ cardsItem, CardsDet }) => {
         Recently Viewed
       </Typography>
       <Box sx={{ display: "flex", gap: "2% ", zIndex: "2" }}>
-        {cardsItem.map((index) => (
-          <CardsDet key={index} CardsDet={CardsDet} />
-        ))}
+        {cardsItem.map((cardItem, index) => {
+          console.log("carduud", cardItem)
+         return <CardsDet key={index} cardItem={cardItem} />
+})}
         <Card
           sx={{
             background: "./images/recently.png",

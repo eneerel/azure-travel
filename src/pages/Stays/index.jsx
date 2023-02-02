@@ -7,7 +7,7 @@ const Stays = () => {
   return (
     <Grid>
       <HeaderDet />
-      <CardsDet />
+      {/* <CardsDet /> */}
       <Recently />
     </Grid>
   );
