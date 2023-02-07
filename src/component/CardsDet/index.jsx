@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 
 const CardsDet = ({cardItem}) => {
@@ -7,22 +7,23 @@ const CardsDet = ({cardItem}) => {
   return (
     <Grid
       sx={{
-        padding: "20px ",
-        borderRadius: "16px",
-        boxShadow: "0px 4px 16px rgba(158, 158, 158, 0.25)",
+        padding: "2rem ",
+        borderRadius: "2rem",
+        boxShadow: "0px 4px 24px  rgba(159, 158, 158, 0.25)",
         background: "#FFFFFF",
         zIndex: "5",
       }}
     >
       <Box sx={{ marginBottom: "4%" }}>
-        <img src={`${cardItem.img}`} alt="" width={360} height={310} />
+        <img src={`${cardItem.img}`} alt="" width={360} height={200} />
       </Box>
       <Box>
         {" "}
         <Box
           sx={{
             color: "dark",
-            fontSize: "28px",
+            fontSize: "2rem",
+            fontWeight:"700"
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -78,7 +79,7 @@ const CardsDet = ({cardItem}) => {
         <Box
           sx={{
             opacity: "0.5",
-            fontSize: "18px",
+            fontSize: "1.5rem",
             marginBottom: "5%",
           }}
         >
@@ -89,7 +90,6 @@ const CardsDet = ({cardItem}) => {
         <Box
           sx={{
             display: "flex",
-
             gap: "20% ",
           }}
         >
@@ -99,7 +99,7 @@ const CardsDet = ({cardItem}) => {
               display: "flex",
             }}
           >
-            <Box sx={{ fontSize: "24px", fontWeight: "700" }}>
+            <Box sx={{ fontSize: "1.5rem", fontWeight: "700" }}>
               {cardItem.type2}
             </Box>
             <Box sx={{ opacity: "0.5", marginTop: "7%" }}>

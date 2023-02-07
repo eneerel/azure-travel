@@ -5,14 +5,14 @@ import CardsDet from ".";
 const Recently = () => {
   console.log(cardsItem);
   return (
-    <Grid sx={{ marginBottom: "10%", marginTop: "40%" }}>
+    <Grid>
       <Typography
         variant="h3"
         sx={{
           color: "black",
           fontWeight: "700",
           width: "900px",
-          marginBottom: "2%",
+          marginBottom: "3%",
           marginTop: "3%",
         }}
       >
@@ -45,7 +45,6 @@ const Recently = () => {
           <Typography
             sx={{
               color: "white",
-
               width: "300px",
             }}
           >
@@ -54,7 +53,6 @@ const Recently = () => {
           <Typography
             sx={{
               color: "white",
-
               width: "300px",
             }}
           >
@@ -73,5 +71,4 @@ const Recently = () => {
     </Grid>
   );
 };
-
 export default Recently;
