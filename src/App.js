@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Navbar from "./component/Navbar";
 import Stays from "./pages/Stays";
 import Footer from "./component/Footer";
+import UserProvider from "./context/userContext";
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("user"));
@@ -14,9 +15,6 @@ function App() {
   const handleClose = () => setOpen(false);
 
   const login = async (email, password) => {
-    // console.log("Login", email);
-    // console.log("Login", password);
-
     try {
       const res = await axios.post("http://localhost:8000/signin", {
         email,
@@ -37,11 +35,14 @@ function App() {
   };
 
   return (
+
     <>
+    <UserProvider>
       <Navbar
         login={login}
         logout={logout}
         user={user}
+        setUser={setUser}
         open={open}
         handleClose={handleClose}
         handleOpen={handleOpen}
@@ -52,6 +53,7 @@ function App() {
         <Route path="/Stays" element={<Stays />} />
       </Routes>
       <Footer />
+      </UserProvider>
     </>
   );
 }

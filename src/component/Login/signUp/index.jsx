@@ -18,7 +18,7 @@ const Signup = (props) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-
+  const [isSignIn, setIsSignIn] = useState("");
   const [isAlert, setIsAlert] = useState("");
   const [message, setMessage] = useState("");
   const [state, setState] = useState("error");
@@ -51,7 +51,7 @@ const Signup = (props) => {
     }
 
     try {
-      const res = await axios.post("http://localhost:8000/signup", {
+      const res = await axios.post("http://localhost:8000/users/signup", {
         name,
         email,
         password,
@@ -60,7 +60,7 @@ const Signup = (props) => {
       setState("success");
       setMessage(res.data.message);
       setIsAlert(true);
-      props.setSignIn(true);
+      props.setIsSignIn(true);
     } catch (error) {
       console.log("Error", error);
     }
@@ -163,7 +163,7 @@ const Signup = (props) => {
               <Button
                 variant="text"
                 onClick={() => {
-                  props.setSignIn(true);
+                  props.setIsSignIn(true);
                 }}
               >
                 НЭВТРЭХ

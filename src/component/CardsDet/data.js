@@ -2,7 +2,7 @@ import StarIcon from "@mui/icons-material/Star";
 export const cardsItem = [
     {
       img: "./images/image 34.png",
-      title: "Swiss Apls",
+      title: "Hallstatt",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",
@@ -23,7 +23,7 @@ export const cardsItem = [
     },
     {
       img: "./images/image 36.png",
-      title: "Swiss Apls",
+      title: "Innsbruck",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",

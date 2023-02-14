@@ -1,8 +1,8 @@
 import StarIcon from "@mui/icons-material/Star";
 export const cardsItem = [
     {
-      img: "./images/image 33.png",
-      title: "Swiss Apls",
+      img: "./images/image 27.png",
+      title: "Mauritius",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",
@@ -22,8 +22,8 @@ export const cardsItem = [
       icontourURL: "/images/icon4.png",
     },
     {
-      img: "./images/image 34.png",
-      title: "Hallstatt",
+      img: "./images/image 28.png",
+      title: "Havelock",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",
@@ -43,8 +43,8 @@ export const cardsItem = [
       icontourURL: "/images/icon4.png",
     },
     {
-      img: "./images/image 35.png",
-      title: "Faroe Island",
+      img: "./images/image 29.png",
+      title: "Whitsunday Islands",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",
@@ -64,8 +64,8 @@ export const cardsItem = [
       icontourURL: "/images/icon4.png",
     },
     {
-      img: "./images/image 36.png",
-      title: "Innsbruck",
+      img: "./images/image 30.png",
+      title: "Maldives",
       rating: "4.7",
       star: <StarIcon />,
       day: "3Days 4Nights",

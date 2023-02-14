@@ -14,7 +14,7 @@ import { Snackbar, Alert } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
 
-const Signin = ({ setSignIn, setUser, handleClose }) => {
+const Signin = ({ setSignIn,user, setUser, handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,7 +44,7 @@ const Signin = ({ setSignIn, setUser, handleClose }) => {
     // console.log("Login", password);
 
     try {
-      const res = await axios.post("http://localhost:8000/signin", {
+      const res = await axios.post("http://localhost:8000/users/signin", {
         email,
         password,
       });
@@ -52,6 +52,7 @@ const Signin = ({ setSignIn, setUser, handleClose }) => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setStatus("success");
       setMessage(res.data.message);
+      console.log(res.data.user)
       setIsAlert(true);
       setUser(res.data.user);
       setTimeout(() => {
@@ -60,8 +61,8 @@ const Signin = ({ setSignIn, setUser, handleClose }) => {
     } catch (error) {
       console.log("ERROR", error);
       setStatus("error");
-      setMessage(error.response.data.message);
-      setIsAlert(true);
+      setMessage(error.response.data);
+      setIsAlert(false);
     }
   };
 

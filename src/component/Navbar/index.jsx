@@ -144,6 +144,7 @@ function Navbar({
             ) : (
               <Button
                 onClick={handleOpen}
+      
                 sx={{
                   padding: "0",
                   fontWeight: "700",
@@ -181,7 +182,7 @@ function Navbar({
         </Drawer>
       </Box>
       <Modal open={open} onClose={handleClose}>
-        <Login handleClose={handleClose} setUser={setUser} />
+        <Login handleClose={handleClose} user={user} setUser={setUser} />
       </Modal>
     </Box>
   );
