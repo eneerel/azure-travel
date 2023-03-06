@@ -9,10 +9,7 @@ import { useState } from "react";
 import AppsIcon from "@mui/icons-material/Apps";
 const Header = ({ clicked, index }) => {
   const items = [
-    {
-      img: "./images/all.svg",
-      category: "ALL",
-    },
+    { img: "./images/all.svg", category: "ALL" },
     { img: "./images/cat1.svg", category: "Beaches" },
     { img: "./images/cat2.svg", category: "Deserts" },
     { img: "./images/cat3.svg", category: "Mountains" },
