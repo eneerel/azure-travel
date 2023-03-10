@@ -22,6 +22,16 @@ const Signup = (props) => {
   const [isAlert, setIsAlert] = useState("");
   const [message, setMessage] = useState("");
   const [state, setState] = useState("error");
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    repassword: "",
+  });
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const [open, setOpen] = React.useState(false);
 
   const changeEmail = (e) => {
     setEmail(e.target.value);
@@ -50,19 +60,35 @@ const Signup = (props) => {
       return;
     }
 
+    // try {
+    //   const res = await axios.post("http://localhost:8000/api/users/signup", {
+    //     name,
+    //     email,
+    //     password,
+    //   });
+    //   console.log("res", res);
+    //   setState("success");
+    //   setMessage(res.data.message);
+    //   setIsAlert(true);
+    //   props.setIsSignIn(true);
+    // } catch (error) {
+    //   console.log("Error", error);
+    // }
     try {
-      const res = await axios.post("http://localhost:8000/users/signup", {
-        name,
-        email,
-        password,
+      const res = await axios.post("http://localhost:8000/api/users/signup", {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+        // role: "user",
+        // ...user,
       });
-      console.log("res", res);
-      setState("success");
-      setMessage(res.data.message);
-      setIsAlert(true);
-      props.setIsSignIn(true);
-    } catch (error) {
-      console.log("Error", error);
+      // props.handleClose();
+      setIsSignIn(true);
+      console.log("RES", res);
+    } catch (err) {
+      console.log("err", err);
+      // setMessage(err.response.data.message);
+      handleOpen();
     }
   };
 
